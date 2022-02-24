@@ -9,7 +9,7 @@ const DOCUMENT_ROOT = __dirname + "/public";
 /**
  * "/"にアクセスがあったらindex.htmlを返却
  */
-app.get("/", (req, res)=>{
+app.get("https://adazakuraa.github.io/online_quiz/", (req, res)=>{
   res.sendFile(DOCUMENT_ROOT + "/index.html");
 });
 app.get("/:file", (req, res)=>{
