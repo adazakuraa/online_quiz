@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SocketIOチャット</title>
+  <style>
+    #no2{display:none}
+    #no2-5{display:none}
+    #no3{display:none}
+    #msglist{list-style-type:none; padding-left:1px;}
+    .msg-me{color:blue}
+    .name {font-weight:bold}
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/css.css">
+</head>
+
+<body>
+
+
+<!-- STEP1. 接続中 -->
+<section id="no1">
+  ...サーバに接続中
+</section>
+<!-- /接続中 -->
+
+<!-- STEP2. 名前を入力 -->
+<section id="no2">
+  <p>あなたの名前を入力してください</p>
+  <form id="frm-myname">
+    <input type="text" id="txt-myname">
+    <button>入室</button>
+  </form>
+</section>
+<!-- /名前を入力 -->
+
+<!--参加者をそろえてゲームをスタートする-->
+<section id="no2-5">
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class=" btn btn-success btn-sm" onclick="st()">ゲームスタート</button>
+    <p id="member"></p>
+  </div>
+</section>
+
+<!-- STEP3. チャット開始 -->
+<section id="no3">
+
+  <div id="loading">
+    <div class="spinner2"></div>
+  </div>
+    <div class="container">
+        <div class="h-25 alert alert-dark" role="alert">
+            <input type="file" id="getfile" accept="text/*" >
+            <pre id="preview" ></pre>
+            <form method="post" action="">
+            <select name="csv">
+              <option value="1">STU1~9</option>
+              <option value="2">STU1~23</option>
+              <option value="3">abc</option>
+              <option value="4">漢字</option>
+            </select>
+            </form><br>
+            <a href="howto.html">遊び方</a>&nbsp;&nbsp;
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="button" class=" btn btn-success btn-sm" onclick="rule()">ルール設定</button>
+                <button type="button" class=" btn btn-success btn-sm" onclick="speed()">速度設定</button>
+                <button type="button" class=" btn btn-success btn-sm" onclick="reset()">リセット</button>
+                <button type="button" class=" btn btn-success btn-sm" onclick="na()">名前登録</button>
+            </div>
+            
+            <div class="btn-group " role="group" aria-label="Basic radio toggle button group">🎶&nbsp;
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                <label onclick="disableMute()" class="btn btn-outline-secondary btn-sm " for="btnradio1">ON</label>
+    
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label onclick="enableMute()" class="btn btn-outline-secondary btn-sm" for="btnradio2">OFF</label>
+              </div>
+        </div>
+
+        <div>
+          <progress id="myProgress" value="-1" max="100"></progress>
+        </div>
+
+        <div class="box1" id="touch-area1">
+            <span class="box-title"　id="touch-area1">問題</span>
+            <p id="mondai" id="touch-area1"></p>
+            <p id="ima"></p>
+            <p id="ans"></p>
+        </div>
+
+        <div class="d-flex justify-content-left">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h6 class="card-title">得点表示</h6>
+                  <p id="tokuten"></p>
+                </div>
+              </div>
+        </div>
+        <p></p>
+    </div>
+</section>
+<!-- /チャット本体 -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="util.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

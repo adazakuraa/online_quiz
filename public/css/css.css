@@ -1,0 +1,131 @@
+.box1 {
+  position: relative;
+  margin: 2em 0;
+  height: 200px;
+  border: solid 3px #1c576b;
+  font-size: large;
+}
+#mondai{
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 13px;
+}
+#ans{
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 20px;
+  bottom: 10px;
+  right: 0;
+  margin:0;
+}
+#ima{
+  font-size: x-large;
+  text-align: center;
+  padding-top: 20px;
+
+}
+.box1 .box-title {
+  position: absolute;
+  display: inline-block;
+  top: -27px;
+  left: -3px;
+  padding: 0 9px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 17px;
+  background: #1c576b;
+  color: #ffffff;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+#myProgress{
+  float: right;
+}
+
+
+  .btn2 {
+      background-color: #668ad8;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+  }
+  
+  .btn:hover {
+      background-color: #668ad8;
+  }
+  
+  input[type="radio"]:checked + label {
+      background-color: blue;
+  }
+  
+  input[type="radio"] {
+      display: none;
+  }
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.btn-flat-border {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #67c5ff;
+  border: solid 2px #67c5ff;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn-flat-border:hover {
+  background: #67c5ff;
+  color: white;
+}
+
+.one,.two,.three,.four,.ques,.init,.result,.result2,.re,.next,.to_res,.hard,.seikai{
+  display:none;
+}
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: #0bd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.spinner {
+  width: 100px;
+  height: 100px;
+  margin: 200px auto;
+  background-color: #fff;
+  border-radius: 100%;
+  animation: sk-scaleout 1.0s infinite ease-in-out;
+}
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
